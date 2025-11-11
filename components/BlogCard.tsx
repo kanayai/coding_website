@@ -24,10 +24,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
 
   return (
     <Card
-      className="code-card mb-4"
+      className="code-card"
       style={{
         borderTop: '4px solid #569cd6',
-        background: '#252526'
+        background: '#252526',
+        height: '100%'
       }}
     >
       <Card.Body>

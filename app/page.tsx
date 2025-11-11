@@ -306,13 +306,15 @@ publications <- tibble(
             size="h2"
           />
 
-          <div style={{ marginTop: '3rem' }}>
+          <Row className="g-4" style={{ marginTop: '3rem' }}>
             {blogPosts
               .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
               .map((post) => (
-                <BlogCard key={post.id} post={post} />
+                <Col key={post.id} lg={4} md={6} sm={12}>
+                  <BlogCard post={post} />
+                </Col>
               ))}
-          </div>
+          </Row>
 
           {blogPosts.length === 0 && (
             <div style={{
