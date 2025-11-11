@@ -1,66 +1,438 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Navigation from '@/components/Navigation';
+import CodeHeading from '@/components/CodeHeading';
+import CodeButton from '@/components/CodeButton';
+import CodeCard from '@/components/CodeCard';
+import BlogCard from '@/components/BlogCard';
+import { blogPosts } from '@/data/blogPosts';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Navigation />
+
+      {/* Hero Section */}
+      <section id="home" style={{
+        minHeight: '90vh',
+        display: 'flex',
+        alignItems: 'center',
+        background: 'linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%)'
+      }}>
+        <Container>
+          <Row className="align-items-center">
+            <Col lg={6}>
+              <CodeHeading
+                code={`def introduce_myself():
+    return {
+        "name": "Prof. Karim AI (Anaya-Izquierdo)",
+        "department": "Mathematical Sciences",
+        "university": "University of Bath, UK",
+        "specialties": ["R", "Python", "Statistics"]
+    }`}
+                language="python"
+                size="h1"
+              />
+              <p style={{ fontSize: '1.1rem', marginTop: '2rem', color: '#b4b4b4' }}>
+                Welcome to my academic portfolio where code meets teaching. I work in the
+                Department of Mathematical Sciences at the University of Bath, specializing in
+                statistical computing and making complex concepts accessible through elegant code.
+              </p>
+              <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <CodeButton
+                  code="View_Courses()"
+                  language="r"
+                  variant="primary"
+                  href="#teaching"
+                />
+                <CodeButton
+                  code="explore_research()"
+                  language="python"
+                  variant="secondary"
+                  href="#research"
+                />
+                <CodeButton
+                  code="read_blog()"
+                  language="python"
+                  variant="outline"
+                  href="#blog"
+                />
+              </div>
+            </Col>
+            <Col lg={6} className="mt-4 mt-lg-0">
+              <div style={{
+                background: '#252526',
+                border: '1px solid #3e3e42',
+                borderRadius: '8px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+              }}>
+                <CodeHeading
+                  code={`library(tidyverse)
+library(ggplot2)
+
+# Visualizing academic impact
+data %>%
+  group_by(year) %>%
+  summarize(publications = n()) %>%
+  ggplot(aes(x = year, y = publications)) +
+  geom_line(color = "#4ec9b0", size = 2)`}
+                  language="r"
+                  size="h4"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Teaching Section */}
+      <section id="teaching" style={{ padding: '5rem 0', background: '#1e1e1e' }}>
+        <Container>
+          <CodeHeading
+            code={`class Teaching:
+    def __init__(self):
+        self.courses = ["Statistics", "Data Science", "ML"]
+        self.students = "hundreds"
+        self.passion = float("inf")`}
+            language="python"
+            subtitle="Building the next generation of data scientists"
+            size="h2"
+          />
+
+          <Row className="mt-5 g-4">
+            <Col md={6} lg={4}>
+              <CodeCard
+                titleCode={`course_intro <- list(
+  name = "Intro to R",
+  level = "Undergraduate",
+  focus = "Statistical Computing"
+)`}
+                language="r"
+                description="Learn the fundamentals of R programming, data manipulation with tidyverse, and statistical visualization with ggplot2."
+                accentColor="#4ec9b0"
+              >
+                <CodeButton
+                  code="View_Syllabus()"
+                  language="r"
+                  variant="outline"
+                />
+              </CodeCard>
+            </Col>
+
+            <Col md={6} lg={4}>
+              <CodeCard
+                titleCode={`course_info = {
+    "name": "Data Science with Python",
+    "level": "Graduate",
+    "tools": ["pandas", "sklearn", "pytorch"]
+}`}
+                language="python"
+                description="Advanced data science techniques using Python. Covers machine learning, deep learning, and real-world applications."
+                accentColor="#61dafb"
+              >
+                <CodeButton
+                  code="view_materials()"
+                  language="python"
+                  variant="outline"
+                />
+              </CodeCard>
+            </Col>
+
+            <Col md={6} lg={4}>
+              <CodeCard
+                titleCode={`stats_ml <- function() {
+  topics <- c(
+    "Bayesian Methods",
+    "Time Series",
+    "Causal Inference"
+  )
+  return(topics)
+}`}
+                language="r"
+                description="Advanced statistical methods and their implementation in R. Emphasis on modern computational approaches."
+                accentColor="#ce9178"
+              >
+                <CodeButton
+                  code="Explore_Topics()"
+                  language="r"
+                  variant="outline"
+                />
+              </CodeCard>
+            </Col>
+          </Row>
+
+          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <CodeHeading
+              code={`# Student Resources
+resources <- c(
+  "Office Hours: Mon/Wed 2-4pm",
+  "Email: your.email@university.edu",
+  "Office: Statistics Building, Room 101"
+)`}
+              language="r"
+              size="h4"
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Research Section */}
+      <section id="research" style={{ padding: '5rem 0', background: '#252526' }}>
+        <Container>
+          <CodeHeading
+            code={`def research_interests():
+    """My current research focus"""
+    return [
+        "Statistical Machine Learning",
+        "Bayesian Computation",
+        "Causal Inference",
+        "High-Dimensional Statistics"
+    ]`}
+            language="python"
+            subtitle="Pushing the boundaries of statistical methodology"
+            size="h2"
+          />
+
+          <Row className="mt-5 g-4">
+            <Col lg={6}>
+              <CodeCard
+                titleCode={`paper_1 <- list(
+  title = "Novel Bayesian Methods",
+  journal = "Journal of Stats",
+  year = 2024,
+  impact = "High"
+)`}
+                language="r"
+                description="Developed new computational approaches for Bayesian inference in high-dimensional settings. Published in top-tier statistical journal."
+                accentColor="#4ec9b0"
+              >
+                <div style={{ marginTop: '1rem' }}>
+                  <CodeButton
+                    code="read_paper()"
+                    language="python"
+                    variant="primary"
+                  />
+                </div>
+              </CodeCard>
+            </Col>
+
+            <Col lg={6}>
+              <CodeCard
+                titleCode={`research_project = {
+    "title": "Causal ML Framework",
+    "funding": "NSF Grant",
+    "status": "Ongoing",
+    "team_size": 5
+}`}
+                language="python"
+                description="Leading a funded research project developing machine learning methods for causal inference from observational data."
+                accentColor="#61dafb"
+              >
+                <div style={{ marginTop: '1rem' }}>
+                  <CodeButton
+                    code="Learn_More()"
+                    language="r"
+                    variant="primary"
+                  />
+                </div>
+              </CodeCard>
+            </Col>
+          </Row>
+
+          <div style={{ marginTop: '4rem' }}>
+            <CodeHeading
+              code={`# Recent Publications
+publications <- tibble(
+  year = c(2024, 2024, 2023, 2023),
+  title = c(
+    "Bayesian Methods for Modern Data",
+    "Causal Inference in Practice",
+    "High-Dimensional Statistical Learning",
+    "Computational Statistics Review"
+  ),
+  citations = c(45, 32, 78, 120)
+) %>% arrange(desc(year))`}
+              language="r"
+              size="h3"
+            />
+            <div style={{
+              textAlign: 'center',
+              marginTop: '2rem',
+              padding: '2rem',
+              background: '#1e1e1e',
+              borderRadius: '8px'
+            }}>
+              <p style={{ color: '#b4b4b4', marginBottom: '1.5rem' }}>
+                View my complete publication list and research profiles
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <CodeButton
+                  code='get_profile("Google Scholar")'
+                  language="python"
+                  variant="secondary"
+                />
+                <CodeButton
+                  code="Visit_ResearchGate()"
+                  language="r"
+                  variant="secondary"
+                />
+                <CodeButton
+                  code='check_orcid()'
+                  language="python"
+                  variant="secondary"
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" style={{ padding: '5rem 0', background: '#1e1e1e' }}>
+        <Container>
+          <CodeHeading
+            code={`class Blog:
+    def __init__(self):
+        self.posts = load_posts()
+        self.topics = ["Statistics", "R", "Python", "Teaching"]
+
+    def get_latest(self):
+        return sorted(self.posts, key=lambda x: x.date, reverse=True)`}
+            language="python"
+            subtitle="Thoughts on statistics, code, and teaching"
+            size="h2"
+          />
+
+          <div style={{ marginTop: '3rem' }}>
+            {blogPosts
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((post) => (
+                <BlogCard key={post.id} post={post} />
+              ))}
+          </div>
+
+          {blogPosts.length === 0 && (
+            <div style={{
+              textAlign: 'center',
+              padding: '3rem',
+              background: '#252526',
+              borderRadius: '8px',
+              color: '#858585'
+            }}>
+              <p style={{ fontSize: '1.1rem' }}>No blog posts yet. Check back soon!</p>
+            </div>
+          )}
+        </Container>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" style={{ padding: '5rem 0', background: '#252526' }}>
+        <Container>
+          <CodeHeading
+            code={`contact_info <- list(
+  name = "Prof. Karim AI (Anaya-Izquierdo)",
+  email = "kai21@bath.ac.uk",
+  department = "Mathematical Sciences",
+  university = "University of Bath",
+  address = list(
+    street = "Claverton Down",
+    city = "Bath",
+    postcode = "BA2 7AY",
+    country = "United Kingdom"
+  )
+)`}
+            language="r"
+            subtitle="Get in touch"
+            size="h2"
+          />
+
+          <Row className="mt-5">
+            <Col md={6}>
+              <CodeCard
+                titleCode={`office_details <- data.frame(
+  Location = "University of Bath",
+  Building = "Mathematical Sciences",
+  Address = "Claverton Down, Bath"
+)`}
+                language="r"
+                description="Visit me at the Department of Mathematical Sciences, University of Bath."
+                accentColor="#4ec9b0"
+              />
+            </Col>
+            <Col md={6}>
+              <CodeCard
+                titleCode={`contact = {
+    "email": "kai21@bath.ac.uk",
+    "office_hours": "By appointment",
+    "response_time": "1-2 business days"
+}`}
+                language="python"
+                description="Feel free to reach out via email. I typically respond within 1-2 business days."
+                accentColor="#61dafb"
+              />
+            </Col>
+          </Row>
+
+          <div style={{
+            marginTop: '3rem',
+            padding: '2rem',
+            background: '#1e1e1e',
+            borderRadius: '8px',
+            textAlign: 'center'
+          }}>
+            <CodeHeading
+              code={`# Connect with me
+library(academic)
+profiles <- c(
+  "Google Scholar",
+  "ResearchGate",
+  "ORCID",
+  "GitHub"
+)`}
+              language="r"
+              size="h4"
+            />
+            <div style={{
+              marginTop: '1.5rem',
+              display: 'flex',
+              gap: '1rem',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <CodeButton
+                code='visit_profile("scholar")'
+                language="python"
+                variant="secondary"
+              />
+              <CodeButton
+                code="GitHub_Profile()"
+                language="r"
+                variant="secondary"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Footer */}
+      <footer style={{
+        padding: '2rem 0',
+        background: '#1e1e1e',
+        borderTop: '1px solid #3e3e42',
+        textAlign: 'center'
+      }}>
+        <Container>
+          <p style={{ color: '#858585', margin: 0 }}>
+            © 2024 Prof. Karim AI (Anaya-Izquierdo) | University of Bath | Department of Mathematical Sciences
+          </p>
+          <p style={{ color: '#555', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+            Built with Next.js, TypeScript, and Bootstrap
+          </p>
+        </Container>
+      </footer>
+    </>
   );
 }
