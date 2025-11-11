@@ -7,9 +7,19 @@ import CodeHeading from '@/components/CodeHeading';
 import CodeButton from '@/components/CodeButton';
 import CodeCard from '@/components/CodeCard';
 import BlogCard from '@/components/BlogCard';
-import { blogPosts } from '@/data/blogPosts';
+import { BlogPost } from '@/data/blogPosts';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    fetch('/api/posts')
+      .then((res) => res.json())
+      .then((posts) => {
+        setBlogPosts(posts);
+      });
+  }, []);
   return (
     <>
       <Navigation />

@@ -77,11 +77,17 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           </div>
         )}
 
-        <Card.Text style={{
-          color: '#d4d4d4',
-          marginBottom: '1rem'
-        }}>
-          {expanded ? post.content : post.excerpt}
+        <Card.Text
+          style={{
+            color: '#d4d4d4',
+            marginBottom: '1rem'
+          }}
+        >
+          {expanded ? (
+            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+          ) : (
+            post.excerpt
+          )}
         </Card.Text>
 
         {expanded && post.codeSnippet && (
