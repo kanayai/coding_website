@@ -4,10 +4,6 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   contentHtml: string;
-  codeSnippet?: {
-    code: string;
-    language: 'r' | 'python';
-  };
   tags?: string[];
 }
 

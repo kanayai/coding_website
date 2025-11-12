@@ -90,25 +90,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           )}
         </Card.Text>
 
-        {expanded && post.codeSnippet && (
-          <div style={{ marginTop: '1.5rem' }}>
-            <SyntaxHighlighter
-              language={post.codeSnippet.language}
-              style={vscDarkPlus}
-              customStyle={{
-                margin: 0,
-                padding: '1rem',
-                background: '#1e1e1e',
-                borderRadius: '8px',
-                fontSize: '0.9rem'
-              }}
-              showLineNumbers={true}
-            >
-              {post.codeSnippet.code}
-            </SyntaxHighlighter>
-          </div>
-        )}
-
         <button
           onClick={() => setExpanded(!expanded)}
           style={{
