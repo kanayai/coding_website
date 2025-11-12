@@ -93,6 +93,123 @@ a:hover {
   height: 10px;
 }
 
+/* Section theming */
+.section {
+  padding: 5rem 0;
+}
+
+.section-primary {
+  background-color: var(--background);
+}
+
+.section-secondary {
+  background-color: var(--code-bg);
+}
+
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+}
+
+.text-muted-custom {
+  color: #858585;
+}
+
+.card-container-secondary {
+  background: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card-container-primary {
+  padding: 2rem;
+  background: var(--background);
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+[data-theme="light"] .hero-section {
+  background: var(--code-bg);
+}
+
+[data-theme="light"] .text-muted-custom {
+  color: #6c757d;
+}
+
+[data-theme="light"] .card-container-secondary {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.text-footer {
+  color: #555;
+}
+
+[data-theme="light"] .text-footer {
+  color: #adb5bd;
+}
+
+.main-nav {
+  background: var(--code-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+}
+
+.nav-toggle {
+  border-color: var(--accent-r) !important;
+  filter: brightness(1.2);
+}
+
+.code-button {
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
+
+.code-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.code-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.code-button-secondary {
+  background: linear-gradient(135deg, #4ec9b0 0%, #3a9e89 100%);
+}
+
+.code-button-outline {
+  background: transparent;
+  border: 2px solid var(--accent-r);
+}
+
+[data-theme="light"] .code-button-primary {
+  background: var(--accent-blue);
+}
+
+[data-theme="light"] .code-button-secondary {
+  background: var(--accent-r);
+}
+
+[data-theme="light"] .code-button-outline {
+  border-color: var(--accent-blue);
+}
+
+[data-theme="light"] .code-button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
 ::-webkit-scrollbar-track {
   background: var(--background);
 }

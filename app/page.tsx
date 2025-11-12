@@ -23,12 +23,7 @@ export default async function Home() {
       </Container>
 
       {/* Hero Section */}
-      <section id="home" style={{
-        minHeight: '90vh',
-        display: 'flex',
-        alignItems: 'center',
-        background: 'linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%)'
-      }}>
+      <section id="home" className="hero-section">
         <Container>
           <Row className="align-items-center">
             <Col lg={6}>
@@ -43,7 +38,7 @@ export default async function Home() {
                 language="python"
                 size="h1"
               />
-              <p style={{ fontSize: '1.1rem', marginTop: '2rem', color: '#b4b4b4' }}>
+              <p style={{ fontSize: '1.1rem', marginTop: '2rem' }}>
                 Welcome to my academic portfolio where code meets teaching. I work in the
                 Department of Mathematical Sciences at the University of Bath, specializing in
                 statistical computing and making complex concepts accessible through elegant code.
@@ -70,14 +65,7 @@ export default async function Home() {
               </div>
             </Col>
             <Col lg={6} className="mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
-              <div style={{
-                background: '#252526',
-                border: '1px solid #3e3e42',
-                borderRadius: '8px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                textAlign: 'center'
-              }}>
+              <div className="card-container-secondary">
                 <Image
                   src="/images/karim_blackboard.jpg"
                   alt="A photo of Prof. Karim AI (Anaya-Izquierdo)"
@@ -111,7 +99,7 @@ export default async function Home() {
       </section>
 
       {/* Teaching Section */}
-      <section id="teaching" style={{ padding: '5rem 0', background: '#1e1e1e' }}>
+      <section id="teaching" className="section section-primary">
         <Container>
           <CodeHeading
             code={`class Teaching:
@@ -202,7 +190,7 @@ resources <- c(
       </section>
 
       {/* Research Section */}
-      <section id="research" style={{ padding: '5rem 0', background: '#252526' }}>
+      <section id="research" className="section section-secondary">
         <Container>
           <CodeHeading
             code={`def research_interests():
@@ -280,14 +268,8 @@ publications <- tibble(
               language="r"
               size="h3"
             />
-            <div style={{
-              textAlign: 'center',
-              marginTop: '2rem',
-              padding: '2rem',
-              background: '#1e1e1e',
-              borderRadius: '8px'
-            }}>
-              <p style={{ color: '#b4b4b4', marginBottom: '1.5rem' }}>
+            <div className="card-container-primary">
+              <p className="text-muted-custom" style={{ marginBottom: '1.5rem' }}>
                 View my complete publication list and research profiles
               </p>
               <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -313,7 +295,7 @@ publications <- tibble(
       </section>
 
       {/* Blog Section */}
-      <section id="blog" style={{ padding: '5rem 0', background: '#1e1e1e' }}>
+      <section id="blog" className="section section-primary">
         <Container>
           <CodeHeading
             code={`class Blog:
@@ -333,7 +315,7 @@ publications <- tibble(
       </section>
 
       {/* Contact Section */}
-      <section id="contact" style={{ padding: '5rem 0', background: '#252526' }}>
+      <section id="contact" className="section section-secondary">
         <Container>
           <CodeHeading
             code={`contact_info <- list(
@@ -380,13 +362,7 @@ publications <- tibble(
             </Col>
           </Row>
 
-          <div style={{
-            marginTop: '3rem',
-            padding: '2rem',
-            background: '#1e1e1e',
-            borderRadius: '8px',
-            textAlign: 'center'
-          }}>
+          <div className="card-container-primary" style={{ marginTop: '3rem' }}>
             <CodeHeading
               code={`# Connect with me
 library(academic)
@@ -422,17 +398,16 @@ profiles <- c(
       </section>
 
       {/* Footer */}
-      <footer style={{
+      <footer className="section-primary" style={{
         padding: '2rem 0',
-        background: '#1e1e1e',
-        borderTop: '1px solid #3e3e42',
+        borderTop: '1px solid var(--border-color)',
         textAlign: 'center'
       }}>
         <Container>
-          <p style={{ color: '#858585', margin: 0 }}>
+          <p className="text-muted-custom" style={{ margin: 0 }}>
             © 2024 Prof. Karim AI (Anaya-Izquierdo) | University of Bath | Department of Mathematical Sciences
           </p>
-          <p style={{ color: '#555', marginTop: '0.5rem', fontSize: '0.9rem' }}>
+          <p className="text-footer" style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
             Built with Next.js, TypeScript, and Bootstrap
           </p>
         </Container>
@@ -440,4 +415,3 @@ profiles <- c(
     </>
   );
 }
-

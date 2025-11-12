@@ -18,14 +18,10 @@ const Navigation: React.FC = () => {
     <Navbar
       expand="lg"
       sticky="top"
-      style={{
-        background: '#252526',
-        borderBottom: '1px solid #3e3e42',
-        padding: '0.5rem 0'
-      }}
+      className="main-nav"
     >
       <Container>
-        <Navbar.Brand href="#home" style={{ fontFamily: 'var(--font-geist-mono)' }}>
+        <Navbar.Brand href="#home" style={{ fontFamily: 'var(--font-jetbrains-mono)' }}>
           <SyntaxHighlighter
             language="r"
             style={vscDarkPlus}
@@ -43,10 +39,7 @@ const Navigation: React.FC = () => {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          style={{
-            borderColor: '#4ec9b0',
-            filter: 'brightness(1.2)'
-          }}
+          className="nav-toggle"
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex align-items-center">
@@ -65,7 +58,7 @@ const Navigation: React.FC = () => {
                   customStyle={{
                     margin: 0,
                     padding: '0.25rem 0.5rem',
-                    background: '#1e1e1e',
+                    background: 'var(--background)',
                     fontSize: '0.9rem',
                     display: 'inline-block',
                     borderRadius: '4px'
