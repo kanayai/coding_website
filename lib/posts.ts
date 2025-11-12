@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 import { BlogPost } from '@/data/blogPosts';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
@@ -18,7 +18,7 @@ export async function getSortedPostsData(): Promise<BlogPost[]> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use cheerio to parse the post
-    const $ = cheerio.load(fileContents);
+    const $ = load(fileContents);
 
     // Extract metadata
     const title = $('head title').text();
