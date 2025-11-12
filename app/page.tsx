@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 import Navigation from '@/components/Navigation';
 import CodeHeading from '@/components/CodeHeading';
 import CodeButton from '@/components/CodeButton';
@@ -13,6 +13,12 @@ export default async function Home() {
   return (
     <>
       <Navigation />
+
+      <Container className="mt-4">
+        <Alert variant="warning">
+          This site has been completely vibe-coded and is under construction. Please bear with me while I upload real content rather than fake/hallucinated one.
+        </Alert>
+      </Container>
 
       {/* Hero Section */}
       <section id="home" style={{
