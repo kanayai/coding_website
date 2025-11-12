@@ -30,11 +30,26 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  /* background: var(--background); */ /* Remove this line */
   font-family: var(--font-jetbrains-mono), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/images/background_code.png'); /* Use the image from public/images */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* Adjust for desired transparency */
 }
 
 * {
