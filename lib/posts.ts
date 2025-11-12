@@ -36,7 +36,7 @@ export async function getSortedPostsData() {
           title: string;
           excerpt: string;
           tags?: string[];
-          codeSnippet?: { language: string; code: string };
+          codeSnippet?: { language: 'r' | 'python'; code: string };
         }),
       };
     })
