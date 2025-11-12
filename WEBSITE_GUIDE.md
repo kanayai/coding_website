@@ -33,26 +33,18 @@ Press `Ctrl + C` in the terminal
 ### Build for Production
 ```bash
 npm run build
-npm start
 ```
 
 ## Adding Blog Posts
 
-**This is super easy!** Follow these steps:
+**This is now automated!** You can write posts in Quarto (`.qmd`) and use a script to publish them.
 
-1. Open the file: `data/blogPosts.ts`
-2. Find the template at the bottom (in comments)
-3. Copy the template and remove the `/*` and `*/` around it
-4. Fill in your post details:
-   - **id**: unique-post-name (use hyphens)
-   - **title**: Your post title
-   - **date**: "2024-11-15" (YYYY-MM-DD format)
-   - **excerpt**: Brief summary (1-2 sentences)
-   - **content**: Full post content
-   - **codeSnippet** (optional): R or Python code
-   - **tags** (optional): ["tag1", "tag2"]
-5. Place your new post at the TOP of the array
-6. Save the file - done!
+1.  **Write:** Create a new `.qmd` file in the `_quarto_source` directory.
+2.  **Publish:** Run the following command in your terminal:
+    ```bash
+    ./publish_post.sh _quarto_source/your-post-name.qmd
+    ```
+3.  **Commit:** The script prepares your post for the website. Just commit the new files in the `posts` and `public` directories.
 
 **See `HOW_TO_ADD_BLOG_POSTS.md` for detailed instructions and examples.**
 
@@ -60,12 +52,12 @@ npm start
 
 ### Update Course Information
 Edit: `app/page.tsx`
-- Find the "Teaching Section" (around line 83)
+- Find the "Teaching Section"
 - Modify the `CodeCard` components with your actual courses
 
 ### Update Research Projects
 Edit: `app/page.tsx`
-- Find the "Research Section" (around line 174)
+- Find the "Research Section"
 - Update research projects and publications
 
 ### Change Colors
@@ -86,19 +78,18 @@ Edit: `components/Navigation.tsx`
 
 ```
 coding_website/
+├── _quarto_source/     # Source files for your blog posts (.qmd)
 ├── app/
 │   ├── page.tsx          # Main page with all sections
 │   ├── layout.tsx        # Site-wide layout
 │   └── globals.css       # Global styles
 ├── components/
 │   ├── Navigation.tsx    # Top navigation bar
-│   ├── CodeHeading.tsx   # Code-styled headings
-│   ├── CodeButton.tsx    # Code-styled buttons
-│   ├── CodeCard.tsx      # Code-styled cards
-│   └── BlogCard.tsx      # Blog post display
-├── data/
-│   └── blogPosts.ts      # ALL YOUR BLOG POSTS HERE
-├── HOW_TO_ADD_BLOG_POSTS.md  # Blog post guide
+│   └── ...               # Other React components
+├── posts/              # Generated HTML blog posts (managed by script)
+├── public/             # Site assets (images, etc.)
+├── publish_post.sh       # Script to publish blog posts
+├── HOW_TO_ADD_BLOG_POSTS.md  # Detailed blog post guide
 └── WEBSITE_GUIDE.md      # This file
 ```
 
@@ -114,10 +105,9 @@ coding_website/
 - Bootstrap grid system for flexibility
 
 ### Easy Blog Management
-- Single file to edit (`data/blogPosts.ts`)
-- Automatic sorting by date
-- Code snippet support
-- Expandable post cards
+- Write posts in Quarto (`.qmd`)
+- A script automates publishing, file moving, and path fixing.
+- Handles images and other assets automatically.
 
 ## Common Tasks
 
@@ -147,15 +137,16 @@ coding_website/
 ## Need Help?
 
 - **Next.js Docs**: https://nextjs.org/docs
+- **Quarto Docs**: https://quarto.org/docs/guide/
 - **Bootstrap Docs**: https://getbootstrap.com/docs
-- **React Syntax Highlighter**: https://github.com/react-syntax-highlighter/react-syntax-highlighter
 
 ## Development Tips
 
-- The dev server auto-reloads when you save files
-- Check the terminal for any errors
-- Use browser DevTools (F12) to inspect elements
-- All content is in `app/page.tsx` and `data/blogPosts.ts`
+- The dev server auto-reloads when you save files.
+- Check the terminal for any errors.
+- Use browser DevTools (F12) to inspect elements.
+- All main page content is in `app/page.tsx`.
+- Blog post source files are in `_quarto_source/`.
 
 ## Deployment Options
 

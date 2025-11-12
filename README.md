@@ -1,22 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code-Themed Academic Portfolio Website
 
-## Getting Started
+This is a personal academic portfolio and blog website built with [Next.js](https://nextjs.org), TypeScript, and Bootstrap. It features a dark, code-themed design and an automated publishing workflow for blog posts written in Quarto.
 
-First, run the development server:
+## Project Documentation
+
+For detailed information on how to run, customize, and manage this website, please see the following guides:
+
+- **[WEBSITE_GUIDE.md](./WEBSITE_GUIDE.md)**: A comprehensive guide covering setup, customization, and content management.
+- **[HOW_TO_ADD_BLOG_POSTS.md](./HOW_TO_ADD_BLOG_POSTS.md)**: A step-by-step guide on how to write and publish new blog posts using the automated script.
+
+---
+
+## Getting Started (Development)
+
+First, install the dependencies:
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the main page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
