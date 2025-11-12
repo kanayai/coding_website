@@ -27,62 +27,44 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
       className="code-card"
       style={{
         borderTop: '4px solid #569cd6',
-        background: '#252526',
         height: '100%'
       }}
     >
-      <Card.Body>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          marginBottom: '1rem'
-        }}>
+      <Card.Body className="d-flex flex-column">
+        <div>
           <Card.Title style={{
-            color: '#4ec9b0',
+            color: 'var(--accent-r)',
             fontSize: '1.5rem',
-            fontFamily: 'var(--font-geist-mono)',
+            fontFamily: 'var(--font-jetbrains-mono)',
             marginBottom: '0.5rem'
           }}>
             {post.title}
           </Card.Title>
-        </div>
 
-        <div style={{
-          color: '#858585',
-          fontSize: '0.9rem',
-          marginBottom: '1rem',
-          fontStyle: 'italic'
-        }}>
-          {formatDate(post.date)}
-        </div>
-
-        {post.tags && post.tags.length > 0 && (
-          <div style={{ marginBottom: '1rem' }}>
-            {post.tags.map((tag, index) => (
-              <Badge
-                key={index}
-                bg="secondary"
-                style={{
-                  marginRight: '0.5rem',
-                  background: '#3e3e42',
-                  color: '#4ec9b0',
-                  fontFamily: 'var(--font-geist-mono)',
-                  fontWeight: 'normal'
-                }}
-              >
-                #{tag}
-              </Badge>
-            ))}
+          <div className="text-muted" style={{
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+            fontStyle: 'italic'
+          }}>
+            {formatDate(post.date)}
           </div>
-        )}
 
-        <Card.Text
-          style={{
-            color: '#d4d4d4',
-            marginBottom: '1rem'
-          }}
-        >
+          {post.tags && post.tags.length > 0 && (
+            <div style={{ marginBottom: '1rem' }}>
+              {post.tags.map((tag, index) => (
+                <Badge
+                  key={index}
+                  pill
+                  className="blog-tag"
+                >
+                  #{tag}
+                </Badge>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <Card.Text className="flex-grow-1">
           {expanded ? (
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           ) : (
@@ -92,16 +74,16 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
 
         <button
           onClick={() => setExpanded(!expanded)}
+          className="mt-auto"
           style={{
-            marginTop: '1rem',
             padding: '0.5rem 1.5rem',
-            background: expanded ? '#3e3e42' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
             border: 'none',
             borderRadius: '6px',
-            color: '#d4d4d4',
-            fontFamily: 'var(--font-geist-mono)',
+            fontFamily: 'var(--font-jetbrains-mono)',
             cursor: 'pointer',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            background: expanded ? 'var(--border-color)' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            color: 'var(--foreground)'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';

@@ -31,6 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  font-size: 1.2rem;
 }
 
 * {
@@ -72,6 +73,15 @@ a:hover {
 .syntax-highlight {
   border-radius: 8px;
   overflow: hidden;
+}
+
+.blog-tag {
+  background-color: var(--border-color) !important;
+  color: var(--accent-r) !important;
+  font-family: var(--font-jetbrains-mono);
+  font-weight: normal;
+  margin-right: 0.5rem;
+  padding: 0.4em 0.6em !important;
 }
 
 /* Custom scrollbar */

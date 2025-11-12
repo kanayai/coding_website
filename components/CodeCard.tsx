@@ -25,7 +25,6 @@ const CodeCard: React.FC<CodeCardProps> = ({
       className="code-card h-100"
       style={{
         borderTop: `4px solid ${accentColor}`,
-        background: '#252526'
       }}
     >
       <Card.Body>
@@ -45,7 +44,7 @@ const CodeCard: React.FC<CodeCardProps> = ({
             {titleCode}
           </SyntaxHighlighter>
         </div>
-        <Card.Text style={{ color: '#d4d4d4' }}>
+        <Card.Text>
           {description}
         </Card.Text>
         {children}
