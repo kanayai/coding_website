@@ -42,7 +42,7 @@ a:hover {
 
 /* Code-themed components */
 .code-heading {
-  font-family: var(--font-geist-mono), 'Courier New', monospace;
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
   background: var(--code-bg);
   border-left: 4px solid var(--accent-r);
   padding: 1rem 1.5rem;

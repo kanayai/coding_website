@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -25,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetBrainsMono.variable} ${geistMono.variable}`}>
+      <body className={`${jetBrainsMono.variable}`}>
         {children}
       </body>
     </html>
