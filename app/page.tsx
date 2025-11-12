@@ -1,25 +1,15 @@
-'use client';
-
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Navigation from '@/components/Navigation';
 import CodeHeading from '@/components/CodeHeading';
 import CodeButton from '@/components/CodeButton';
 import CodeCard from '@/components/CodeCard';
-import BlogCard from '@/components/BlogCard';
-import { BlogPost } from '@/data/blogPosts';
-import { useEffect, useState } from 'react';
+import BlogSection from '@/components/BlogSection';
+import { getSortedPostsData } from '@/lib/posts';
 
-export default function Home() {
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+export default async function Home() {
+  const blogPosts = await getSortedPostsData();
 
-  useEffect(() => {
-    fetch('/api/posts')
-      .then((res) => res.json())
-      .then((posts) => {
-        setBlogPosts(posts);
-      });
-  }, []);
   return (
     <>
       <Navigation />
@@ -316,27 +306,7 @@ publications <- tibble(
             size="h2"
           />
 
-          <Row className="g-4" style={{ marginTop: '3rem' }}>
-            {blogPosts
-              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-              .map((post) => (
-                <Col key={post.id} lg={4} md={6} sm={12}>
-                  <BlogCard post={post} />
-                </Col>
-              ))}
-          </Row>
-
-          {blogPosts.length === 0 && (
-            <div style={{
-              textAlign: 'center',
-              padding: '3rem',
-              background: '#252526',
-              borderRadius: '8px',
-              color: '#858585'
-            }}>
-              <p style={{ fontSize: '1.1rem' }}>No blog posts yet. Check back soon!</p>
-            </div>
-          )}
+          <BlogSection posts={blogPosts} />
         </Container>
       </section>
 
@@ -448,3 +418,4 @@ profiles <- c(
     </>
   );
 }
+
