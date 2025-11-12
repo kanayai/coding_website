@@ -3,10 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { BlogPost } from '@/data/blogPosts';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export async function getSortedPostsData() {
+export async function getSortedPostsData(): Promise<BlogPost[]> {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = await Promise.all(
@@ -27,18 +28,18 @@ export async function getSortedPostsData() {
         .process(matterResult.content);
       const contentHtml = processedContent.toString();
 
-      // Combine the data with the id and contentHtml
-      return {
+      // Construct a well-typed post object
+      const post: BlogPost = {
         id,
         contentHtml,
-        ...(matterResult.data as {
-          date: string;
-          title: string;
-          excerpt: string;
-          tags?: string[];
-          codeSnippet?: { language: 'r' | 'python'; code: string };
-        }),
+        title: matterResult.data.title,
+        date: matterResult.data.date,
+        excerpt: matterResult.data.excerpt,
+        tags: matterResult.data.tags,
+        codeSnippet: matterResult.data.codeSnippet,
       };
+
+      return post;
     })
   );
   // Sort posts by date
