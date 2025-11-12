@@ -1,5 +1,7 @@
-import React from 'react';
+import Image from 'next/image';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Navigation from '@/components/Navigation';
 import CodeHeading from '@/components/CodeHeading';
 import CodeButton from '@/components/CodeButton';
@@ -67,27 +69,41 @@ export default async function Home() {
                 />
               </div>
             </Col>
-            <Col lg={6} className="mt-4 mt-lg-0">
+            <Col lg={6} className="mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
               <div style={{
                 background: '#252526',
                 border: '1px solid #3e3e42',
                 borderRadius: '8px',
                 padding: '2rem',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+                textAlign: 'center'
               }}>
-                <CodeHeading
-                  code={`library(tidyverse)
-library(ggplot2)
-
-# Visualizing academic impact
-data %>%
-  group_by(year) %>%
-  summarize(publications = n()) %>%
-  ggplot(aes(x = year, y = publications)) +
-  geom_line(color = "#4ec9b0", size = 2)`}
-                  language="r"
-                  size="h4"
+                <Image
+                  src="/images/karim_blackboard.jpg"
+                  alt="A photo of Prof. Karim AI (Anaya-Izquierdo)"
+                  width={300}
+                  height={300}
+                  style={{
+                    borderRadius: '50%',
+                    border: '4px solid var(--accent-blue)',
+                    objectFit: 'cover',
+                  }}
                 />
+                <div style={{ marginTop: '1.5rem' }}>
+                  <SyntaxHighlighter
+                    language="python"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: '0.5rem',
+                      background: 'transparent',
+                      fontSize: '0.9rem',
+                      textAlign: 'center'
+                    }}
+                  >
+                    # karim_blackboard.jpg
+                  </SyntaxHighlighter>
+                </div>
               </div>
             </Col>
           </Row>
