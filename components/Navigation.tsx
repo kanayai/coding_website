@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import ThemeToggleButton from './ThemeToggleButton';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -49,7 +49,7 @@ const Navigation: React.FC = () => {
           }}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto d-flex align-items-center">
             {navItems.map((item, index) => (
               <Nav.Link
                 key={index}
@@ -76,6 +76,9 @@ const Navigation: React.FC = () => {
                 </SyntaxHighlighter>
               </Nav.Link>
             ))}
+            <Nav.Item className="ms-lg-3">
+              <ThemeToggleButton />
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
