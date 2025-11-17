@@ -2,6 +2,10 @@ import PublicationList from '@/components/PublicationList';
 import publicationsData from '@/data/publications.json';
 
 export default function PublicationsPage() {
+  const sortedPublications = [...publicationsData].sort((a, b) => {
+    return parseInt(b.year) - parseInt(a.year);
+  });
+
   return (
     <div style={{
       maxWidth: '1200px',
@@ -39,7 +43,7 @@ export default function PublicationsPage() {
           Total publications: {publicationsData.length}
         </p>
       </div>
-      <PublicationList publications={publicationsData} />
+      <PublicationList publications={sortedPublications} />
     </div>
   );
 }
