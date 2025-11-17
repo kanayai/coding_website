@@ -18,7 +18,7 @@ interface PublicationListProps {
 }
 
 const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
-  const DISPLAY_LIMIT = 20;
+  const DISPLAY_LIMIT = 21;
   const displayedPublications = publications.slice(0, DISPLAY_LIMIT);
   const remainingRows = publications.length - DISPLAY_LIMIT;
 
