@@ -40,14 +40,6 @@
     "link": "https://doi.org/10.1007/s11222-019-09910-z"
   },
   {
-    "date": "2017",
-    "authors": "Granzotto, D., Anaya-Izquierdo, K. & Louzada Neto, F.",
-    "year": "2017",
-    "title": "The exponential-transmuted model: a new way to transmute models with an unrestricted parameter space",
-    "journal": "Journal of Statistical Planning and Inference.",
-    "link": ""
-  },
-  {
     "date": "April 21, 2015",
     "authors": "Brauer, R., Smeeth, L., Anaya-Izquierdo, K., Timmis, A., Denaxas, S. C., Farrington, C. P., Whitaker, H., Hemingway, H. & Douglas, I.",
     "year": "2015",
@@ -158,5 +150,21 @@
     "title": "Fisher’s observed information matrix for location and scale parameters under type i censoring",
     "journal": "Communications in Statistics - Theory and Methods. 29, 7, p. 1527-1537 11 p.",
     "link": "https://doi.org/10.1080/03610920008832560"
+  },
+  {
+    "date": "2017",
+    "authors": "Anaya-Izquierdo, K., Marriott, P., Vos, P. & Critchley, F.",
+    "year": "2017",
+    "title": "On the geometric interplay between goodness-of-fit and estimation: Illustrative examples",
+    "journal": "Computational Information Geometry : For Image and Signal Processing. Nielsen, F., Dodson, K. & Critchley, F. (eds.). Springer, p. 63-77 (Signals and Communication Technology).",
+    "link": "https://link.springer.com/chapter/10.1007/978-3-319-47058-0_3"
+  },
+  {
+    "date": "2017",
+    "authors": "Anaya-Izquierdo, K., Critchley, F., Marriott, P. & Vos, P.",
+    "year": "2017",
+    "title": "Towards the geometry of model sensitivity: an Illustration",
+    "journal": "Computational Information Geometry : For Image and Signal Processing. Nielsen, F., Dodson, K. & Critchley, F. (eds.). Springer, p. 33-62 (Signals and Communication Technology).",
+    "link": "https://link.springer.com/chapter/10.1007/978-3-319-47058-0_2"
   }
 ]
