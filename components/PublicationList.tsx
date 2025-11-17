@@ -26,8 +26,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
 title = "${pub.title}"
 authors = "${pub.authors}"
 journal = "${pub.journal}"
-year = ${pub.year}
-doi = "${pub.link}"`;
+year = ${pub.year}`;
 
         return (
           <div
@@ -45,6 +44,27 @@ doi = "${pub.link}"`;
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
+            <div style={{ padding: '1rem 1.5rem', background: 'var(--background)', borderBottom: '1px solid rgba(128, 128, 128, 0.2)' }}>
+              <h3 style={{ margin: 0, fontSize: '1.1rem', fontFamily: 'var(--font-jetbrains-mono)', color: 'var(--text-color)' }}>
+                {pub.title}
+                {' '}
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: '#4a9eff',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontFamily: 'var(--font-jetbrains-mono)',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.textDecoration = 'underline'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.textDecoration = 'none'; }}
+                >
+                  [DOI]
+                </a>
+              </h3>
+            </div>
             <SyntaxHighlighter
               language="python"
               style={vscDarkPlus}
@@ -58,34 +78,6 @@ doi = "${pub.link}"`;
             >
               {publicationCode}
             </SyntaxHighlighter>
-            <div style={{
-              padding: '1rem 1.5rem',
-              background: 'var(--background)',
-              borderTop: '1px solid rgba(128, 128, 128, 0.2)'
-            }}>
-              <a
-                href={pub.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: '#4a9eff',
-                  textDecoration: 'none',
-                  fontSize: '0.9rem',
-                  fontFamily: 'var(--font-jetbrains-mono)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.textDecoration = 'underline';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.textDecoration = 'none';
-                }}
-              >
-                <span>→</span> View Publication (DOI)
-              </a>
-            </div>
           </div>
         );
       })}
