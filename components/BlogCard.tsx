@@ -66,7 +66,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
 
         <Card.Text className="flex-grow-1">
           {expanded ? (
-            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+            <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           ) : (
             post.excerpt
           )}
