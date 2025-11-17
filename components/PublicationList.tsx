@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -18,9 +18,15 @@ interface PublicationListProps {
 }
 
 const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
-  const DISPLAY_LIMIT = 23;
-  const displayedPublications = publications.slice(0, DISPLAY_LIMIT);
-  const remainingRows = publications.length - DISPLAY_LIMIT;
+  const DEFAULT_DISPLAY_LIMIT = 20;
+  const [showAll, setShowAll] = useState(false);
+
+  const publicationsToDisplay = showAll ? publications : publications.slice(0, DEFAULT_DISPLAY_LIMIT);
+  const remainingRows = publications.length - DEFAULT_DISPLAY_LIMIT;
+
+  const handleShowMoreClick = () => {
+    setShowAll(true);
+  };
 
   return (
     <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.9rem', color: 'var(--text-color)' }}>
@@ -60,7 +66,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         <div>&lt;chr&gt;</div>
         <div>&lt;chr&gt;</div>
       </div>
-      {displayedPublications.map((pub, index) => (
+      {publicationsToDisplay.map((pub, index) => (
         <div
           key={index}
           style={{
@@ -69,7 +75,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
             gap: '0.5rem',
             paddingTop: '0.5rem',
             paddingBottom: '0.5rem',
-            borderBottom: index < displayedPublications.length - 1 ? '1px solid var(--border-color-light)' : 'none',
+            borderBottom: index < publicationsToDisplay.length - 1 ? '1px solid var(--border-color-light)' : 'none',
             alignItems: 'center',
           }}
         >
@@ -95,8 +101,11 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
           </div>
         </div>
       ))}
-      {remainingRows > 0 && (
-        <div style={{ marginTop: '1rem', color: 'var(--text-color-light)' }}>
+      {!showAll && remainingRows > 0 && (
+        <div
+          style={{ marginTop: '1rem', color: 'var(--text-color-light)', cursor: 'pointer' }}
+          onClick={handleShowMoreClick}
+        >
           # ℹ {remainingRows} more rows
           <br />
           # ℹ Use `print(n = ...)` to see more rows
