@@ -18,6 +18,10 @@ interface PublicationListProps {
 }
 
 const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
+  const DISPLAY_LIMIT = 20;
+  const displayedPublications = publications.slice(0, DISPLAY_LIMIT);
+  const remainingRows = publications.length - DISPLAY_LIMIT;
+
   return (
     <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.9rem', color: 'var(--text-color)' }}>
       <div style={{ marginBottom: '1rem', color: 'var(--text-color-light)' }}>
@@ -54,7 +58,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         <div>&lt;chr&gt;</div>
         <div>&lt;chr&gt;</div>
       </div>
-      {publications.map((pub, index) => (
+      {displayedPublications.map((pub, index) => (
         <div
           key={index}
           style={{
@@ -63,7 +67,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
             gap: '0.5rem',
             paddingTop: '0.5rem',
             paddingBottom: '0.5rem',
-            borderBottom: index < publications.length - 1 ? '1px solid var(--border-color-light)' : 'none',
+            borderBottom: index < displayedPublications.length - 1 ? '1px solid var(--border-color-light)' : 'none',
             alignItems: 'center',
           }}
         >
@@ -90,6 +94,13 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
           <div>{pub.year}</div>
         </div>
       ))}
+      {remainingRows > 0 && (
+        <div style={{ marginTop: '1rem', color: 'var(--text-color-light)' }}>
+          # ℹ {remainingRows} more rows
+          <br />
+          # ℹ Use `print(n = ...)` to see more rows
+        </div>
+      )}
     </div>
   );
 };
