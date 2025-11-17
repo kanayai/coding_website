@@ -238,17 +238,7 @@ a:hover {
   background: #555;
 }
 
-.blog-post-content,
-.blog-post-content h1,
-.blog-post-content h2,
-.blog-post-content h3,
-.blog-post-content h4,
-.blog-post-content h5,
-.blog-post-content h6,
-.blog-post-content p,
-.blog-post-content span,
-.blog-post-content li,
-.blog-post-content div {
+.blog-post-content * {
   color: var(--foreground) !important;
   background: transparent !important;
 }
