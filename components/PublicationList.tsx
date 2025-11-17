@@ -23,10 +23,11 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
       {publications.map((pub, index) => {
         // Create code-like representation of the publication
         const publicationCode = `# Publication ${index + 1}
-title = "${pub.title} [DOI: ${pub.link}]"
+title = "${pub.title}"
 authors = "${pub.authors}"
 journal = "${pub.journal}"
-year = ${pub.year}`;
+year = ${pub.year}
+doi = "${pub.link}"`;
 
         return (
           <div
@@ -57,6 +58,34 @@ year = ${pub.year}`;
             >
               {publicationCode}
             </SyntaxHighlighter>
+            <div style={{
+              padding: '1rem 1.5rem',
+              background: 'var(--background)',
+              borderTop: '1px solid rgba(128, 128, 128, 0.2)'
+            }}>
+              <a
+                href={pub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#4a9eff',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontFamily: 'var(--font-jetbrains-mono)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.textDecoration = 'underline';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.textDecoration = 'none';
+                }}
+              >
+                <span>→</span> View Publication (DOI)
+              </a>
+            </div>
           </div>
         );
       })}
