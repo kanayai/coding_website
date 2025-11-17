@@ -149,7 +149,7 @@
     "year": "2001",
     "title": "Test of fit for the inverse Gaussian and gamma distributions under censoring",
     "journal": "Communications in Statistics - Theory and Methods. 30, 4, p. 757-773 17 p.",
-    "link": ""
+    "link": "https://doi.org/10.1081/STA-100002150"
   },
   {
     "date": "2000",
@@ -157,6 +157,6 @@
     "year": "2000",
     "title": "Fisher’s observed information matrix for location and scale parameters under type i censoring",
     "journal": "Communications in Statistics - Theory and Methods. 29, 7, p. 1527-1537 11 p.",
-    "link": ""
+    "link": "https://doi.org/10.1080/03610920008832560"
   }
 ]
