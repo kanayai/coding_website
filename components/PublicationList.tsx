@@ -22,8 +22,4 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       {publications.map((pub, index) => {
         // Create code-like representation of the publication
-        const publicationCode = `# Publication ${index + 1}
-title = "${pub.title} [DOI: ${pub.link}]"
-authors = "${pub.authors}"
-journal = "${pub.journal}"
-year = ${pub.year}`;
+        const publicationCode = `test`;
