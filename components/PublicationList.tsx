@@ -38,6 +38,22 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         <div>Journal</div>
         <div>Year</div>
       </div>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr', // Match header columns
+          gap: '0.5rem',
+          paddingBottom: '0.5rem',
+          borderBottom: '1px solid var(--border-color)',
+          color: 'var(--text-color-light)',
+          fontSize: '0.8rem',
+        }}
+      >
+        <div>&lt;chr&gt;</div>
+        <div>&lt;chr&gt;</div>
+        <div>&lt;chr&gt;</div>
+        <div>&lt;chr&gt;</div>
+      </div>
       {publications.map((pub, index) => (
         <div
           key={index}
