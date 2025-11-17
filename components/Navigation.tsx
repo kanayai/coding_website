@@ -48,10 +48,7 @@ const Navigation: React.FC = () => {
               <Nav.Link
                 key={index}
                 href={item.href}
-                style={{
-                  padding: '0.25rem 0.75rem',
-                  margin: '0 0.25rem'
-                }}
+                // Removed explicit padding and margin to allow Bootstrap to handle spacing
               >
                 <SyntaxHighlighter
                   language={item.language}
@@ -60,8 +57,8 @@ const Navigation: React.FC = () => {
                     margin: 0,
                     padding: '0.25rem 0.5rem',
                     background: 'var(--background)',
-                    fontSize: '0.9rem',
-                    display: 'inline-block',
+                    fontSize: '0.9em', // Use em for relative sizing
+                    // Removed display: 'inline-block' to allow for better wrapping
                     borderRadius: '4px'
                   }}
                   showLineNumbers={false}
