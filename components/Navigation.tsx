@@ -10,6 +10,7 @@ const Navigation: React.FC = () => {
     { code: 'library(home)', href: '#home', language: 'r' },
     { code: 'import teaching', href: '#teaching', language: 'python' },
     { code: 'import research', href: '#research', language: 'python' },
+    { code: 'import publications', href: '/publications', language: 'python' },
     { code: 'import blog', href: '#blog', language: 'python' },
     { code: 'Contact()', href: '#contact', language: 'r' },
   ];
