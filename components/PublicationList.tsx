@@ -26,4 +26,4 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
 title = "${pub.title} [DOI: ${pub.link}]"
 authors = "${pub.authors}"
 journal = "${pub.journal}"
-year = ${pub.year}`;
+year = ${pub.year}`;`;
