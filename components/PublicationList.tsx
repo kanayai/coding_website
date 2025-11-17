@@ -25,12 +25,12 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
   return (
     <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.9rem', color: 'var(--text-color)' }}>
       <div style={{ marginBottom: '1rem', color: 'var(--text-color-light)' }}>
-        # A tibble: {publications.length} x 4
+        # A tibble: {publications.length} x 5
       </div>
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr', // Adjust column widths as needed
+          gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Added DOI column
           gap: '0.5rem',
           paddingBottom: '0.5rem',
           borderBottom: '1px solid var(--border-color)',
@@ -41,11 +41,12 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         <div>Authors</div>
         <div>Journal</div>
         <div>Year</div>
+        <div>DOI</div>
       </div>
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr', // Match header columns
+          gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Match header columns
           gap: '0.5rem',
           paddingBottom: '0.5rem',
           borderBottom: '1px solid var(--border-color)',
@@ -57,13 +58,14 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         <div>&lt;chr&gt;</div>
         <div>&lt;chr&gt;</div>
         <div>&lt;chr&gt;</div>
+        <div>&lt;chr&gt;</div>
       </div>
       {displayedPublications.map((pub, index) => (
         <div
           key={index}
           style={{
             display: 'grid',
-            gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr', // Match header columns
+            gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Match header columns
             gap: '0.5rem',
             paddingTop: '0.5rem',
             paddingBottom: '0.5rem',
@@ -71,9 +73,11 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
             alignItems: 'center',
           }}
         >
+          <div>{pub.title}</div>
+          <div>{pub.authors}</div>
+          <div>{pub.journal}</div>
+          <div>{pub.year}</div>
           <div>
-            {pub.title}
-            {' '}
             <a
               href={pub.link}
               target="_blank"
@@ -89,9 +93,6 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
               [DOI]
             </a>
           </div>
-          <div>{pub.authors}</div>
-          <div>{pub.journal}</div>
-          <div>{pub.year}</div>
         </div>
       ))}
       {remainingRows > 0 && (
