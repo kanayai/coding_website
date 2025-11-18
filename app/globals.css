@@ -232,7 +232,7 @@ a:hover {
   border-color: var(--accent-blue);
 }
 
-[data-theme="light"] .code-button:hover {
+[data-e="light"] .code-button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -253,4 +253,68 @@ a:hover {
 .blog-post-content * {
   color: var(--foreground) !important;
   background: transparent !important;
+}
+
+.python-script-nav {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+}
+
+.python-script-nav-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.python-script-nav-buttons {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.python-script-nav-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.python-script-nav-button.red { background-color: #ff5f56; }
+.python-script-nav-button.yellow { background-color: #ffbd2e; }
+.python-script-nav-button.green { background-color: #27c93f; }
+
+.python-script-nav-title {
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.python-script-nav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.python-script-nav-line {
+  margin-bottom: 0.5rem;
+}
+
+.python-keyword {
+  color: var(--accent-blue);
+}
+
+.python-variable {
+  color: var(--accent-r);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.python-variable:hover {
+  color: var(--accent-orange);
 }
