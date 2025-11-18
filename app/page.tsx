@@ -83,9 +83,9 @@ export default async function Home() {
                     style={vscDarkPlus}
                     customStyle={{
                       margin: 0,
-                      padding: '0.5rem',
+                      padding: '0.2rem',
                       background: 'transparent',
-                      fontSize: '0.9rem',
+                      fontSize: '1.1rem',
                       textAlign: 'center'
                     }}
                   >

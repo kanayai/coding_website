@@ -18,10 +18,10 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
   size = 'h2'
 }) => {
   const fontSize = {
-    h1: '2rem',
-    h2: '1.5rem',
-    h3: '1.25rem',
-    h4: '1rem'
+    h1: '2.2rem',
+    h2: '1.7rem',
+    h3: '1.45rem',
+    h4: '1.2rem'
   };
 
   return (
@@ -32,7 +32,7 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
           style={vscDarkPlus}
           customStyle={{
             margin: 0,
-            padding: '1rem',
+            padding: '0.5rem',
             background: 'transparent',
             fontSize: 'inherit'
           }}

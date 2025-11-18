@@ -29,7 +29,7 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
   };
 
   return (
-    <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '0.9rem', color: 'var(--text-color)' }}>
+    <div style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '1.1rem', color: 'var(--text-color)' }}>
       <div style={{ marginBottom: '1rem', color: 'var(--text-color-light)' }}>
         # A tibble: {publications.length} x 5
       </div>
@@ -37,8 +37,8 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         style={{
           display: 'grid',
           gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Added DOI column
-          gap: '0.5rem',
-          paddingBottom: '0.5rem',
+          gap: '0.2rem',
+          paddingBottom: '0.2rem',
           borderBottom: '1px solid var(--border-color)',
           fontWeight: 'bold',
         }}
@@ -53,8 +53,8 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
         style={{
           display: 'grid',
           gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Match header columns
-          gap: '0.5rem',
-          paddingBottom: '0.5rem',
+          gap: '0.2rem',
+          paddingBottom: '0.2rem',
           borderBottom: '1px solid var(--border-color)',
           color: 'var(--text-color-light)',
           fontSize: '0.8rem',
@@ -72,9 +72,9 @@ const PublicationList: React.FC<PublicationListProps> = ({ publications }) => {
           style={{
             display: 'grid',
             gridTemplateColumns: '2fr 2fr 1.5fr 0.5fr 1fr', // Match header columns
-            gap: '0.5rem',
-            paddingTop: '0.5rem',
-            paddingBottom: '0.5rem',
+            gap: '0.2rem',
+            paddingTop: '0.2rem',
+            paddingBottom: '0.2rem',
             borderBottom: index < publicationsToDisplay.length - 1 ? '1px solid var(--border-color-light)' : 'none',
             alignItems: 'center',
           }}

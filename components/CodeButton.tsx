@@ -27,9 +27,9 @@ const CodeButton: React.FC<CodeButtonProps> = ({
         style={vscDarkPlus}
         customStyle={{
           margin: 0,
-          padding: '0.5rem 1rem',
+          padding: '0.2rem 0.5rem',
           background: 'transparent',
-          fontSize: '1.8rem',
+          fontSize: '2.0rem',
           display: 'inline-block'
         }}
         showLineNumbers={false}
