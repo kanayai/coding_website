@@ -259,7 +259,7 @@ a:hover {
   background-color: var(--code-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0.5rem;
   font-family: var(--font-jetbrains-mono), monospace;
   margin-bottom: 2rem;
   position: sticky;
@@ -302,7 +302,7 @@ a:hover {
 }
 
 .python-script-nav-line {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .python-keyword {
@@ -316,5 +316,15 @@ a:hover {
 }
 
 .python-variable:hover {
+  color: var(--accent-orange);
+}
+
+.python-comment {
+  color: var(--accent-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.python-comment:hover {
   color: var(--accent-orange);
 }
