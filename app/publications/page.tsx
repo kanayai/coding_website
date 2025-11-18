@@ -1,10 +1,16 @@
 import PublicationList from '@/components/PublicationList';
 import publicationsData from '@/data/publications.json';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function PublicationsPage() {
   const sortedPublications = [...publicationsData].sort((a, b) => {
     return parseInt(b.year) - parseInt(a.year);
   });
+
+  const rCodeSnippet = `> library(tidyverse)
+> publications <- read_csv("~/publications.csv")
+> publications`;
 
   return (
     <div style={{
@@ -42,6 +48,26 @@ export default function PublicationsPage() {
         }}>
           Total publications: {publicationsData.length}
         </p>
+      </div>
+      <div style={{
+        marginBottom: '2rem',
+        borderRadius: '8px',
+        overflow: 'hidden',
+        border: '1px solid var(--border-color)',
+      }}>
+        <SyntaxHighlighter
+          language="r"
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: '1rem',
+            fontSize: '1rem',
+            background: 'var(--code-bg)',
+          }}
+          showLineNumbers={false}
+        >
+          {rCodeSnippet}
+        </SyntaxHighlighter>
       </div>
       <PublicationList publications={sortedPublications} />
     </div>
