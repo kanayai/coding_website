@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
               margin: 0,
               padding: '0.25rem 0.75rem',
               background: 'transparent',
-              fontSize: '1.1rem',
+              fontSize: '2.2rem',
               display: 'inline-block'
             }}
             showLineNumbers={false}
@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
                     margin: 0,
                     padding: '0.25rem 0.5rem',
                     background: 'var(--background)',
-                    fontSize: '0.9em', // Use em for relative sizing
+                    fontSize: '1.8em', // Use em for relative sizing
                     // Removed display: 'inline-block' to allow for better wrapping
                     borderRadius: '4px'
                   }}
