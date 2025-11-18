@@ -29,9 +29,9 @@ const CodeButton: React.FC<CodeButtonProps> = ({
           margin: 0,
           padding: '0',
           background: 'transparent',
-          fontSize: '3.3rem',
+          fontSize: '2.2rem',
           display: 'inline-block',
-          lineHeight: '0.15'
+          lineHeight: '0.2'
         }}
         showLineNumbers={false}
       >

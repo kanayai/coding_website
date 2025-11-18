@@ -61,9 +61,9 @@ export default function PublicationsPage() {
           customStyle={{
             margin: 0,
             padding: '0',
-            fontSize: '2.25rem',
+            fontSize: '1.5rem',
             background: 'var(--code-bg)',
-            lineHeight: '0.15'
+            lineHeight: '0.2'
           }}
           showLineNumbers={false}
         >

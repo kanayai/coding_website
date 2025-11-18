@@ -37,8 +37,8 @@ const CodeCard: React.FC<CodeCardProps> = ({
               padding: '0',
               background: '#1e1e1e',
               borderRadius: '4px',
-              fontSize: '2.25rem',
-              lineHeight: '0.15'
+              fontSize: '1.5rem',
+              lineHeight: '0.2'
             }}
             showLineNumbers={false}
           >

@@ -18,10 +18,10 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
   size = 'h2'
 }) => {
   const fontSize = {
-    h1: '3.9rem',
-    h2: '3.15rem',
-    h3: '2.775rem',
-    h4: '2.4rem'
+    h1: '2.6rem',
+    h2: '2.1rem',
+    h3: '1.85rem',
+    h4: '1.6rem'
   };
 
   return (
@@ -35,7 +35,7 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
             padding: '0',
             background: 'transparent',
             fontSize: 'inherit',
-            lineHeight: '0.15'
+            lineHeight: '0.2'
           }}
           showLineNumbers={false}
         >
