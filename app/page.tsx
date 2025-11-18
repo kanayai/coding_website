@@ -67,10 +67,10 @@ export default async function Home() {
             <Col lg={6} className="mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
               <div className="card-container-secondary">
                 <Image
-                  src="/images/karim_blackboard.jpg"
+                  src="/images/karim_blackboard.png"
                   alt="A photo of Prof. Karim AI (Anaya-Izquierdo)"
-                  width={300}
-                  height={300}
+                  width={400}
+                  height={400}
                   style={{
                     borderRadius: '50%',
                     border: '4px solid var(--accent-blue)',
@@ -89,7 +89,7 @@ export default async function Home() {
                       textAlign: 'center'
                     }}
                   >
-                    # karim_blackboard.jpg
+                    # karim_blackboard.png
                   </SyntaxHighlighter>
                 </div>
               </div>
