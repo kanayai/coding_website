@@ -16,15 +16,15 @@ export default async function Home() {
     <>
       <Navigation />
 
-      <Container className="mt-4">
+      <div className="main-container mt-4">
         <Alert variant="warning">
           This site has been completely vibe-coded and is under construction. Please bear with me while I upload real content rather than fake/hallucinated one.
         </Alert>
-      </Container>
+      </div>
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        <Container>
+        <div className="main-container">
           <Row className="align-items-center">
             <Col lg={6}>
               <CodeHeading
@@ -97,12 +97,12 @@ export default async function Home() {
               </div>
             </Col>
           </Row>
-        </Container>
+        </div>
       </section>
 
       {/* Teaching Section */}
       <section id="teaching" className="section section-primary">
-        <Container>
+        <div className="main-container">
           <CodeHeading
             code={`\\documentclass{article}
 \\author{Prof. Karim AI (Anaya-Izquierdo)}
@@ -189,12 +189,12 @@ resources <- c(
               size="h4"
             />
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* Research Section */}
       <section id="research" className="section section-secondary">
-        <Container>
+        <div className="main-container">
           <CodeHeading
             code={`---
 title: "Research Interests"
@@ -296,12 +296,12 @@ publications <- tibble(
               </div>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* Blog Section */}
       <section id="blog" className="section section-primary">
-        <Container>
+        <div className="main-container">
           <CodeHeading
             code={`class Blog:
     def __init__(self):
@@ -316,12 +316,12 @@ publications <- tibble(
           />
 
           <BlogSection posts={blogPosts} />
-        </Container>
+        </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="section section-secondary">
-        <Container>
+        <div className="main-container">
           <CodeHeading
             code={`contact_info <- list(
   name = "Prof. Karim AI (Anaya-Izquierdo)",
@@ -399,7 +399,7 @@ profiles <- c(
               />
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* Footer */}
@@ -408,14 +408,14 @@ profiles <- c(
         borderTop: '1px solid var(--border-color)',
         textAlign: 'center'
       }}>
-        <Container>
+        <div className="main-container">
           <p className="text-muted-custom" style={{ margin: 0 }}>
             © 2024 Prof. Karim AI (Anaya-Izquierdo) | University of Bath | Department of Mathematical Sciences
           </p>
           <p className="text-footer" style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
             Built with Next.js, TypeScript, and Bootstrap
           </p>
-        </Container>
+        </div>
       </footer>
     </>
   );
