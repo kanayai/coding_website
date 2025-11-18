@@ -7,7 +7,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeCardProps {
   titleCode: string;
-  language: 'r' | 'python';
+  language: 'r' | 'python' | 'yaml';
   description: string;
   children?: React.ReactNode;
   accentColor?: string;

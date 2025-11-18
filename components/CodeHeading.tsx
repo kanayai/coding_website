@@ -6,7 +6,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeHeadingProps {
   code: string;
-  language: 'r' | 'python';
+  language: 'r' | 'python' | 'yaml';
   subtitle?: string;
   size?: 'h1' | 'h2' | 'h3' | 'h4';
 }

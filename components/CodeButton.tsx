@@ -6,7 +6,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeButtonProps {
   code: string;
-  language: 'r' | 'python';
+  language: 'r' | 'python' | 'yaml';
   onClick?: () => void;
   href?: string;
   variant?: 'primary' | 'secondary' | 'outline';
