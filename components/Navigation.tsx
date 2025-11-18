@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const Navigation: React.FC = () => {
   const navItems = [
+    { name: 'home', href: '#home' },
     { name: 'teaching', href: '#teaching' },
     { name: 'research', href: '#research' },
     { name: 'publications', href: '/publications' },
@@ -21,17 +22,12 @@ const Navigation: React.FC = () => {
           <span className="python-script-nav-button green"></span>
         </div>
         <div className="python-script-nav-title">
-          karim_ai_navigation.py
+          karim_ai_website.py
         </div>
         <div style={{ flex: 1 }}></div>
         <ThemeToggleButton />
       </div>
       <div className="python-script-nav-content">
-        <div className="python-script-nav-line">
-          <Link href="#home" className="python-comment">
-            # Karim AI website
-          </Link>
-        </div>
         {navItems.map((item, index) => (
           <div key={index} className="python-script-nav-line">
             <span className="python-keyword">import</span>{' '}

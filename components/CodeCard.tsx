@@ -34,10 +34,11 @@ const CodeCard: React.FC<CodeCardProps> = ({
             style={vscDarkPlus}
             customStyle={{
               margin: 0,
-              padding: '0.4rem',
+              padding: '0.2rem',
               background: '#1e1e1e',
               borderRadius: '4px',
-              fontSize: '1.2rem'
+              fontSize: '1.2rem',
+              lineHeight: '1.2'
             }}
             showLineNumbers={false}
           >

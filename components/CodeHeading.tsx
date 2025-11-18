@@ -32,9 +32,10 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
           style={vscDarkPlus}
           customStyle={{
             margin: 0,
-            padding: '0.5rem',
+            padding: '0.2rem',
             background: 'transparent',
-            fontSize: 'inherit'
+            fontSize: 'inherit',
+            lineHeight: '1.2'
           }}
           showLineNumbers={false}
         >
