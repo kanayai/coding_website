@@ -9,14 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
     "cheerio": "^1.1.2",
     "gray-matter": "^4.0.3",
     "next": "16.0.1",
     "pdf-parse": "^2.4.5",
     "pdf2json": "^4.0.0",
     "react": "19.2.0",
-    "react-bootstrap": "^2.10.10",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
     "remark": "^15.0.1",
@@ -27,8 +25,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "autoprefixer": "^10.4.22",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5"
   }
 }

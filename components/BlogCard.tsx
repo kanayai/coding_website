@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, Badge } from 'react-bootstrap';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { BlogPost } from '@/data/blogPosts';
@@ -23,54 +22,44 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   };
 
   return (
-    <Card
+    <div
       className="code-card"
       style={{
         borderTop: '4px solid #569cd6',
         height: '100%'
       }}
     >
-      <Card.Body className="d-flex flex-column">
+      <div className="flex flex-col h-full p-4">
         <div>
-          <Card.Title style={{
-            color: 'var(--accent-r)',
-            fontSize: '1.5rem',
-            fontFamily: 'var(--font-jetbrains-mono)',
-            marginBottom: '0.5rem'
-          }}>
+          <h3 className="text-accent-r text-xl font-jetbrains-mono mb-2">
             {post.title}
-          </Card.Title>
+          </h3>
 
-          <div className="text-muted" style={{
-            fontSize: '0.9rem',
-            marginBottom: '1rem',
-            fontStyle: 'italic'
-          }}>
+          <div className="text-gray-500 text-sm mb-4 italic">
             {formatDate(post.date)}
           </div>
 
           {post.tags && post.tags.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               {post.tags.map((tag, index) => (
-                <Badge
+                <span
                   key={index}
-                  pill
-                  className="blog-tag"
+                  className="blog-tag inline-block px-2 py-1 rounded-full text-xs font-normal mr-2"
                 >
                   #{tag}
-                </Badge>
+                  </span>
               ))}
             </div>
           )}
         </div>
 
-        <Card.Text className="flex-grow-1">
+        <p className="flex-grow text-base text-foreground">
           {expanded ? (
             <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           ) : (
             post.excerpt
           )}
-        </Card.Text>
+        </p>
 
         <button
           onClick={() => setExpanded(!expanded)}
@@ -94,8 +83,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
         >
           {expanded ? '// Collapse' : '// Read More'}
         </button>
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   );
 };
 

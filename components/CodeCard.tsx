@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Card } from 'react-bootstrap';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -21,13 +20,13 @@ const CodeCard: React.FC<CodeCardProps> = ({
   accentColor = '#4ec9b0'
 }) => {
   return (
-    <Card
-      className="code-card h-100"
+    <div
+      className="code-card h-full"
       style={{
         borderTop: `4px solid ${accentColor}`,
       }}
     >
-      <Card.Body>
+      <div className="p-4">
         <div className="mb-3">
           <SyntaxHighlighter
             language={language}
@@ -46,12 +45,12 @@ const CodeCard: React.FC<CodeCardProps> = ({
             {titleCode}
           </SyntaxHighlighter>
         </div>
-        <Card.Text>
+        <p className="text-base text-foreground">
           {description}
-        </Card.Text>
+        </p>
         {children}
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   );
 };
 

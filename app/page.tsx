@@ -104,12 +104,12 @@ export default async function Home() {
       <section id="teaching" className="section section-primary">
         <div className="main-container">
           <CodeHeading
-            code={`\\documentclass{article}
-\\author{Prof. Karim AI (Anaya-Izquierdo)}
-\\title{Teaching Portfolio}
-\\date{2024}
-\\begin{document}
-\\maketitle`}
+            code={`\documentclass{article}
+\author{Prof. Karim AI (Anaya-Izquierdo)}
+\title{Teaching Portfolio}
+\date{2024}
+\begin{document}
+\maketitle`}
             language="latex"
             subtitle="Building the next generation of data scientists"
             size="h2"
