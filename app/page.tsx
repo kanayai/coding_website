@@ -87,7 +87,7 @@ export default async function Home() {
                       background: 'transparent',
                       fontSize: '1.4rem',
                       textAlign: 'center',
-                      lineHeight: '0.9'
+                      lineHeight: '0.8'
                     }}
                   >
                     # karim_blackboard.png
@@ -103,12 +103,13 @@ export default async function Home() {
       <section id="teaching" className="section section-primary">
         <Container>
           <CodeHeading
-            code={`class Teaching:
-    def __init__(self):
-        self.courses = ["Statistics", "Data Science", "ML"]
-        self.students = "hundreds"
-        self.passion = float("inf")`}
-            language="python"
+            code={`\\documentclass{article}
+\\author{Prof. Karim AI (Anaya-Izquierdo)}
+\\title{Teaching Portfolio}
+\\date{2024}
+\\begin{document}
+\\maketitle`}
+            language="latex"
             subtitle="Building the next generation of data scientists"
             size="h2"
           />

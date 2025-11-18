@@ -6,7 +6,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeButtonProps {
   code: string;
-  language: 'r' | 'python' | 'yaml';
+  language: 'r' | 'python' | 'yaml' | 'latex';
   onClick?: () => void;
   href?: string;
   variant?: 'primary' | 'secondary' | 'outline';
@@ -31,7 +31,7 @@ const CodeButton: React.FC<CodeButtonProps> = ({
           background: 'transparent',
           fontSize: '2.2rem',
           display: 'inline-block',
-          lineHeight: '0.9'
+          lineHeight: '0.8'
         }}
         showLineNumbers={false}
       >

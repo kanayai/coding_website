@@ -7,7 +7,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeCardProps {
   titleCode: string;
-  language: 'r' | 'python' | 'yaml';
+  language: 'r' | 'python' | 'yaml' | 'latex';
   description: string;
   children?: React.ReactNode;
   accentColor?: string;
@@ -38,7 +38,7 @@ const CodeCard: React.FC<CodeCardProps> = ({
               background: '#1e1e1e',
               borderRadius: '4px',
               fontSize: '1.5rem',
-              lineHeight: '0.9'
+              lineHeight: '0.8'
             }}
             showLineNumbers={false}
           >

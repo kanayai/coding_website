@@ -6,7 +6,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeHeadingProps {
   code: string;
-  language: 'r' | 'python' | 'yaml';
+  language: 'r' | 'python' | 'yaml' | 'latex';
   subtitle?: string;
   size?: 'h1' | 'h2' | 'h3' | 'h4';
 }
@@ -35,7 +35,7 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
             padding: '0',
             background: 'transparent',
             fontSize: 'inherit',
-            lineHeight: '0.9'
+            lineHeight: '0.8'
           }}
           showLineNumbers={false}
         >
