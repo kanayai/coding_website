@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Navigation from '@/components/Navigation';
@@ -17,16 +16,16 @@ export default async function Home() {
       <Navigation />
 
       <div className="main-container mt-4">
-        <Alert variant="warning">
+        <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
           This site has been completely vibe-coded and is under construction. Please bear with me while I upload real content rather than fake/hallucinated one.
-        </Alert>
+        </div>
       </div>
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
         <div className="main-container">
-          <Row className="align-items-center">
-            <Col lg={6}>
+          <div className="flex flex-wrap items-center -mx-4">
+            <div className="w-full lg:w-1/2 px-4">
               <CodeHeading
                 code={`def introduce_myself():
     return {
@@ -38,12 +37,12 @@ export default async function Home() {
                 language="python"
                 size="h1"
               />
-              <p style={{ fontSize: '1.1rem', marginTop: '2rem' }}>
+              <p className="text-lg mt-8">
                 Welcome to my academic portfolio where code meets teaching. I work in the
                 Department of Mathematical Sciences at the University of Bath, specializing in
                 statistical computing and making complex concepts accessible through elegant code.
               </p>
-              <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div className="mt-8 flex flex-wrap gap-4">
                 <CodeButton
                   code="View_Courses()"
                   language="r"
@@ -63,8 +62,8 @@ export default async function Home() {
                   href="#blog"
                 />
               </div>
-            </Col>
-            <Col lg={6} className="mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
+            </div>
+            <div className="w-full lg:w-1/2 px-4 mt-4 lg:mt-0 flex justify-center items-center">
               <div className="card-container-secondary">
                 <Image
                   src="/images/karim_blackboard.png"
@@ -77,7 +76,7 @@ export default async function Home() {
                     objectFit: 'cover',
                   }}
                 />
-                <div style={{ marginTop: '1.5rem' }}>
+                <div className="mt-6">
                   <SyntaxHighlighter
                     language="python"
                     style={vscDarkPlus}
@@ -95,8 +94,8 @@ export default async function Home() {
                   </SyntaxHighlighter>
                 </div>
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -115,8 +114,8 @@ export default async function Home() {
             size="h2"
           />
 
-          <Row className="mt-5 g-4">
-            <Col md={6} lg={4}>
+          <div className="flex flex-wrap -mx-4 mt-5">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
               <CodeCard
                 titleCode={`course_intro <- list(
   name = "Intro to R",
@@ -133,9 +132,9 @@ export default async function Home() {
                   variant="outline"
                 />
               </CodeCard>
-            </Col>
+            </div>
 
-            <Col md={6} lg={4}>
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
               <CodeCard
                 titleCode={`course_info = {
     "name": "Data Science with Python",
@@ -152,9 +151,9 @@ export default async function Home() {
                   variant="outline"
                 />
               </CodeCard>
-            </Col>
+            </div>
 
-            <Col md={6} lg={4}>
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
               <CodeCard
                 titleCode={`stats_ml <- function() {
   topics <- c(
@@ -174,10 +173,10 @@ export default async function Home() {
                   variant="outline"
                 />
               </CodeCard>
-            </Col>
-          </Row>
+            </div>
+          </div>
 
-          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+          <div className="mt-12 text-center">
             <CodeHeading
               code={`# Student Resources
 resources <- c(
@@ -211,8 +210,8 @@ tags:
             size="h2"
           />
 
-          <Row className="mt-5 g-4">
-            <Col lg={6}>
+          <div className="flex flex-wrap -mx-4 mt-5">
+            <div className="w-full lg:w-1/2 px-4">
               <CodeCard
                 titleCode={`paper_1 <- list(
   title = "Novel Bayesian Methods",
@@ -224,7 +223,7 @@ tags:
                 description="Developed new computational approaches for Bayesian inference in high-dimensional settings. Published in top-tier statistical journal."
                 accentColor="#4ec9b0"
               >
-                <div style={{ marginTop: '1rem' }}>
+                <div className="mt-4">
                   <CodeButton
                     code="read_paper()"
                     language="python"
@@ -232,9 +231,9 @@ tags:
                   />
                 </div>
               </CodeCard>
-            </Col>
+            </div>
 
-            <Col lg={6}>
+            <div className="w-full lg:w-1/2 px-4">
               <CodeCard
                 titleCode={`research_project = {
     "title": "Causal ML Framework",
@@ -246,7 +245,7 @@ tags:
                 description="Leading a funded research project developing machine learning methods for causal inference from observational data."
                 accentColor="#61dafb"
               >
-                <div style={{ marginTop: '1rem' }}>
+                <div className="mt-4">
                   <CodeButton
                     code="Learn_More()"
                     language="r"
@@ -254,10 +253,10 @@ tags:
                   />
                 </div>
               </CodeCard>
-            </Col>
-          </Row>
+            </div>
+          </div>
 
-          <div style={{ marginTop: '4rem' }}>
+          <div className="mt-16">
             <CodeHeading
               code={`# Recent Publications
 publications <- tibble(
@@ -274,10 +273,10 @@ publications <- tibble(
               size="h3"
             />
             <div className="card-container-primary">
-              <p className="text-muted-custom" style={{ marginBottom: '1.5rem' }}>
+              <p className="text-muted-custom mb-6">
                 View my complete publication list and research profiles
               </p>
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="flex gap-4 justify-center flex-wrap">
                 <CodeButton
                   code='get_profile("Google Scholar")'
                   language="python"
@@ -340,8 +339,8 @@ publications <- tibble(
             size="h2"
           />
 
-          <Row className="mt-5">
-            <Col md={6}>
+          <div className="flex flex-wrap -mx-4 mt-5">
+            <div className="w-full md:w-1/2 px-4">
               <CodeCard
                 titleCode={`office_details <- data.frame(
   Location = "University of Bath",
@@ -352,8 +351,8 @@ publications <- tibble(
                 description="Visit me at the Department of Mathematical Sciences, University of Bath."
                 accentColor="#4ec9b0"
               />
-            </Col>
-            <Col md={6}>
+            </div>
+            <div className="w-full md:w-1/2 px-4">
               <CodeCard
                 titleCode={`contact = {
     "email": "kai21@bath.ac.uk",
@@ -364,10 +363,10 @@ publications <- tibble(
                 description="Feel free to reach out via email. I typically respond within 1-2 business days."
                 accentColor="#61dafb"
               />
-            </Col>
-          </Row>
+            </div>
+          </div>
 
-          <div className="card-container-primary" style={{ marginTop: '3rem' }}>
+          <div className="card-container-primary mt-12">
             <CodeHeading
               code={`# Connect with me
 library(academic)
@@ -380,13 +379,7 @@ profiles <- c(
               language="r"
               size="h4"
             />
-            <div style={{
-              marginTop: '1.5rem',
-              display: 'flex',
-              gap: '1rem',
-              justifyContent: 'center',
-              flexWrap: 'wrap'
-            }}>
+            <div className="mt-6 flex gap-4 justify-center flex-wrap">
               <CodeButton
                 code='visit_profile("scholar")'
                 language="python"
@@ -403,16 +396,12 @@ profiles <- c(
       </section>
 
       {/* Footer */}
-      <footer className="section-primary" style={{
-        padding: '2rem 0',
-        borderTop: '1px solid var(--border-color)',
-        textAlign: 'center'
-      }}>
+      <footer className="section-primary py-8 border-t border-border-color text-center">
         <div className="main-container">
           <p className="text-muted-custom" style={{ margin: 0 }}>
             © 2024 Prof. Karim AI (Anaya-Izquierdo) | University of Bath | Department of Mathematical Sciences
           </p>
-          <p className="text-footer" style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
+          <p className="text-footer mt-2 text-sm">
             Built with Next.js, TypeScript, and Bootstrap
           </p>
         </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import { Row, Col } from 'react-bootstrap';
 import BlogCard from '@/components/BlogCard';
 import { BlogPost } from '@/data/blogPosts';
 
@@ -11,13 +10,13 @@ interface BlogSectionProps {
 export default function BlogSection({ posts }: BlogSectionProps) {
   return (
     <>
-      <Row className="g-4" style={{ marginTop: '3rem' }}>
+      <div className="flex flex-wrap -mx-4 mt-12">
         {posts.map((post) => (
-          <Col key={post.id} lg={4} md={6} sm={12}>
+          <div key={post.id} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4">
             <BlogCard post={post} />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
 
       {posts.length === 0 && (
         <div
