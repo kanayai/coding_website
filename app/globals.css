@@ -18,12 +18,12 @@
 }
 
 html {
-  font-size: 120%;
+  font-size: 140%;
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 100%; /* Adjust base font size for smaller screens */
+    font-size: 120%; /* Adjust base font size for smaller screens */
   }
 }
 
