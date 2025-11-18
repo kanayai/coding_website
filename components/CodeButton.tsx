@@ -22,22 +22,22 @@ const CodeButton: React.FC<CodeButtonProps> = ({
 
   const buttonContent = (
     <div className="syntax-highlight">
-      <SyntaxHighlighter
-        language={language}
-        style={vscDarkPlus}
-        customStyle={{
-          margin: 0,
-          padding: '0',
-          background: 'transparent',
-          fontSize: '2.2rem',
-          display: 'inline-block',
-          lineHeight: '0.2'
-        }}
-        showLineNumbers={false}
-      >
-        {code}
-      </SyntaxHighlighter>
-    </div>
+              <SyntaxHighlighter
+                language={language}
+                style={vscDarkPlus}
+                customStyle={{
+                  margin: 0,
+                  padding: '0',
+                  background: 'transparent',
+                  fontSize: '2.2rem',
+                  display: 'inline-block',
+                }}
+                PreTag="div"
+                codeTagProps={{ style: { lineHeight: '0.2' } }}
+                showLineNumbers={false}
+              >
+                {code}
+              </SyntaxHighlighter>    </div>
   );
 
   const classNames = `code-button code-button-${variant}`;

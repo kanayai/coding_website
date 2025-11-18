@@ -35,8 +35,9 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
             padding: '0',
             background: 'transparent',
             fontSize: 'inherit',
-            lineHeight: '0.2'
           }}
+          PreTag="div"
+          codeTagProps={{ style: { lineHeight: '0.2' } }}
           showLineNumbers={false}
         >
           {code}

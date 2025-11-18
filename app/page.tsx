@@ -87,8 +87,9 @@ export default async function Home() {
                       background: 'transparent',
                       fontSize: '1.4rem',
                       textAlign: 'center',
-                      lineHeight: '0.2'
                     }}
+                    PreTag="div"
+                    codeTagProps={{ style: { lineHeight: '0.2' } }}
                   >
                     # karim_blackboard.png
                   </SyntaxHighlighter>
