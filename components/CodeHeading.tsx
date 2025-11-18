@@ -35,8 +35,7 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
             padding: '0.1rem',
             background: 'transparent',
             fontSize: 'inherit',
-            lineHeight: '1.2',
-            letterSpacing: '-0.05em'
+            lineHeight: '1.0'
           }}
           showLineNumbers={false}
         >
