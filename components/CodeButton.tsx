@@ -31,7 +31,7 @@ const CodeButton: React.FC<CodeButtonProps> = ({
           background: 'transparent',
           fontSize: '3.3rem',
           display: 'inline-block',
-          lineHeight: '0.1'
+          lineHeight: '0.15'
         }}
         showLineNumbers={false}
       >
