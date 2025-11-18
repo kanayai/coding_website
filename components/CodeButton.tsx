@@ -29,7 +29,7 @@ const CodeButton: React.FC<CodeButtonProps> = ({
                   margin: 0,
                   padding: '0',
                   background: 'transparent',
-                  fontSize: '2.2rem',
+                  fontSize: '1.2rem',
                   display: 'inline-block',
                 }}
                 PreTag="div"

@@ -61,7 +61,7 @@ export default function PublicationsPage() {
           customStyle={{
             margin: 0,
             padding: '0',
-            fontSize: '1.5rem',
+            fontSize: '1.2rem',
             background: 'var(--code-bg)',
           }}
           PreTag="div"

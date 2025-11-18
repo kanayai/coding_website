@@ -37,7 +37,7 @@ const CodeCard: React.FC<CodeCardProps> = ({
               padding: '0',
               background: '#1e1e1e',
               borderRadius: '4px',
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
             }}
             PreTag="div"
             codeTagProps={{ style: { lineHeight: '0.2' } }}

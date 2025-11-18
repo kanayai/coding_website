@@ -18,10 +18,10 @@ const CodeHeading: React.FC<CodeHeadingProps> = ({
   size = 'h2'
 }) => {
   const fontSize = {
-    h1: '2.6rem',
-    h2: '2.1rem',
-    h3: '1.85rem',
-    h4: '1.6rem'
+    h1: '1.2rem',
+    h2: '1.2rem',
+    h3: '1.2rem',
+    h4: '1.2rem'
   };
 
   return (

@@ -85,7 +85,7 @@ export default async function Home() {
                       margin: 0,
                       padding: '0',
                       background: 'transparent',
-                      fontSize: '1.4rem',
+                      fontSize: '1.2rem',
                       textAlign: 'center',
                     }}
                     PreTag="div"
