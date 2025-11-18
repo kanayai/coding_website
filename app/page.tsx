@@ -194,15 +194,17 @@ resources <- c(
       <section id="research" className="section section-secondary">
         <Container>
           <CodeHeading
-            code={`def research_interests():
-    """My current research focus"""
-    return [
-        "Statistical Machine Learning",
-        "Bayesian Computation",
-        "Causal Inference",
-        "High-Dimensional Statistics"
-    ]`}
-            language="python"
+            code={`---
+title: "Research Interests"
+author: "Prof. Karim AI (Anaya-Izquierdo)"
+date: "2024-01-01"
+tags:
+  - "Statistical Machine Learning"
+  - "Bayesian Computation"
+  - "Causal Inference"
+  - "High-Dimensional Statistics"
+---`}
+            language="yaml"
             subtitle="Pushing the boundaries of statistical methodology"
             size="h2"
           />
