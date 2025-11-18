@@ -87,7 +87,7 @@ export default async function Home() {
                       background: 'transparent',
                       fontSize: '1.4rem',
                       textAlign: 'center',
-                      lineHeight: '0.7'
+                      lineHeight: '0.2'
                     }}
                   >
                     # karim_blackboard.png

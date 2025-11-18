@@ -63,7 +63,7 @@ export default function PublicationsPage() {
             padding: '0',
             fontSize: '1.5rem',
             background: 'var(--code-bg)',
-            lineHeight: '0.7'
+            lineHeight: '0.2'
           }}
           showLineNumbers={false}
         >
