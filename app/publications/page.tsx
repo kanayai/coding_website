@@ -60,10 +60,11 @@ export default function PublicationsPage() {
           style={vscDarkPlus}
           customStyle={{
             margin: 0,
-            padding: '0.2rem',
-            fontSize: '1.2rem',
+            padding: '0.1rem',
+            fontSize: '1.3rem',
             background: 'var(--code-bg)',
-            lineHeight: '1.2'
+            lineHeight: '1.2',
+            letterSpacing: '-0.05em'
           }}
           showLineNumbers={false}
         >

@@ -83,11 +83,12 @@ export default async function Home() {
                     style={vscDarkPlus}
                     customStyle={{
                       margin: 0,
-                      padding: '0.1rem',
+                      padding: '0.2rem',
                       background: 'transparent',
-                      fontSize: '1.1rem',
+                      fontSize: '1.2rem',
                       textAlign: 'center',
-                      lineHeight: '1.2'
+                      lineHeight: '1.2',
+                      letterSpacing: '-0.05em'
                     }}
                   >
                     # karim_blackboard.png
